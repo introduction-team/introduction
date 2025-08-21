@@ -1,212 +1,240 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Introduction Page</title>
-  <style>
-    :root {
-      --brand-blue: #0070B8;
-      --bg-black: #000000;
-      --text-white: #ffffff;
-    }
-
-    * { box-sizing: border-box; }
-
-    body {
-      margin: 0;
-      font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
-      background: var(--bg-black);
-      color: var(--text-white);
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-    }
-
-    /* Header */
-    header {
-      width: 100%;
-      padding: 14px 22px;
-      background: rgba(0, 0, 0, 0.12);
-      backdrop-filter: blur(6px);
-      position: sticky;
-      top: 0;
-      z-index: 10;
-    }
-
-    .nav {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      max-width: 1200px;
-      margin: 0 auto;
-    }
-
-    .brand {
-      font-weight: 700;
-      letter-spacing: 0.4px;
-      opacity: 0.9;
-      color: var(--text-white);
-    }
-
-    /* Layout */
-    .wrapper {
-      flex: 1;
-      display: grid;
-      grid-template-columns: 35% 65%; /* 35% for matter, 65% for photos */
-      gap: 24px;
-      max-width: 1200px;
-      width: 100%;
-      margin: 28px auto;
-      padding: 0 22px 40px;
-    }
-
-    /* Left (Matter) */
-    .intro {
-      display: grid;
-      place-items: center; /* centers content both horizontally and vertically */
-      text-align: center; /* aligns text in center as requested */
-    }
-
-    .intro h1 {
-      margin: 0 0 12px 0;
-      font-size: clamp(28px, 4vw, 42px);
-      line-height: 1.15;
-      color: var(--text-white);
-    }
-
-    .intro p {
-      margin: 0 auto;
-      max-width: 36ch;
-      font-size: clamp(15px, 1.8vw, 18px);
-      opacity: 0.95;
-      color: var(--text-white); /* left side matter in white */
-    }
-
-    /* Right (Photos) */
-    .people-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 22px;
-      align-content: center;
-      justify-items: center;
-      padding: 12px 0;
-    }
-
-    @media (max-width: 920px) {
-      .people-grid { grid-template-columns: repeat(2, 1fr); }
-    }
-
-    @media (max-width: 680px) {
-      .wrapper {
-        grid-template-columns: 1fr; /* stack on small screens */
-      }
-      .people-grid { grid-template-columns: repeat(3, 1fr); }
-    }
-
-    .person {
-      display: grid;
-      justify-items: center;
-      gap: 8px;
-      text-align: center;
-    }
-
-    .person a {
-      text-decoration: none;
-    }
-
-    .avatar {
-      width: 140px;
-      height: 140px;
-      border-radius: 50%;
-      overflow: hidden;
-      border: 4px solid rgba(255, 255, 255, 0.55);
-      transition: box-shadow 0.2s ease, transform 0.2s ease;
-      display: grid;
-      place-items: center;
-      background: rgba(255,255,255,0.1);
-    }
-
-    .avatar img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      display: block;
-    }
-
-    /* Hover highlight: shadow on pointer */
-    .avatar:hover {
-      box-shadow: 0 16px 34px rgba(0, 0, 0, 0.65), 0 0 0 6px rgba(0, 112, 184, 0.55);
-      transform: translateY(-3px);
-    }
-
-    .name {
-      font-weight: 700;
-      color: var(--brand-blue); /* person names in blue */
-      letter-spacing: 0.2px;
-    }
-
-    /* Footer (optional minimal spacing) */
-    footer { height: 10px; }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <title>Portfolio Website</title>
 </head>
 <body>
-  <main class="wrapper" id="home">
-    <!-- Left: 35% Matter -->
-    <section class="intro">
-      <div>
-        <h1>Personal Portfolio-websites</h1>
-        <p>
-          This project was developed by a team of five students from CSE-A. Each member actively contributed to the design, development, and implementation of the work. The project highlights our teamwork, learning, and application of knowledge gained during our course.
+    <header>
+    <nav>
+    <a href="#" class="active">Home</a>
+    <a href="#skills">Skills</a>
+    <a href="#education">Education</a>
+    <a href="#projects">Projects</a>
+    <a href="#contact">Contact</a>
+    </nav>
+        <a href="#" class="logo">Manohar.R.K.S</a>
+        <style>
+        html {
+      scroll-behavior: smooth;
+    }
+    html {
+        scroll-behavior: smooth;
+    }
+    .skills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      font-family: Arial, sans-serif;
+      margin: 0;
+      color: white;
+    }
+    .skills .card p {
+      font-size: 13px;
+    }
+    #skills > h2 {
+      font-size: 2em; 
+      margin-bottom: 10px;
+      font-size: 35px;
+      color: white;
+    }
+    .card {
+      background: #0070B8;
+      padding: 20px;
+      border-radius: 10px;
+      flex: 1 1 calc(33% - 20px);
+    }
+    .skills .card h2 {
+    color: gold;
+    }
+    html {
+        scroll-behavior: smooth;
+        scroll-padding-top: 80px;
+    }
+    </style>
+    </header>
+    <section class="home">
+        <div class="home-img">
+            <img src="mannu.jpeg" alt="">
+        </div>
+        <div class="home-content">
+            <h1>Hi, It's <span>Manohar.R.K.S</span></h1>
+            <h3 class="typing-text">I'm a <span></span></h3>
+            <p>An aspiring Ethical Hacker passionate about securing digital systems and protecting data from cyber threats. I specialize in exploring vulnerabilities, performing penetration testing, and applying security best practices to strengthen networks and applications</p>
+            <div class="social-icons">
+                <a href="https://www.linkedin.com/in/manohar-rks/" target="_blank">
+                    <i class="fa-brands fa-linkedin"></i></a>
+                <a href="https://github.com/Manohar-rks" target="_blank">
+                    <i class="fa-brands fa-github"></i>
+                </a>
+                <a href="https://www.youtube.com/@MANOHARrks" target="_blank">
+                    <i class="fa-brands fa-youtube"></i></a>
+                <a href="https://www.instagram.com/manohar_r.k.s/" target="_blank">
+                    <i class="fa-brands fa-instagram"></i></a>
+            </div>
+            <a href="mailto:manohar.r.k.s.139@gmail.com?subject=Hiring%20Opportunity&body=Hi%20Manohar," class="btn">Hire me</a>
+        </div>
+    </section>
+    <section id="skills">
+    <h2>Skills</h2>
+    <div class="skills">
+      <div class="card">
+        <h2>Html & Css</h2>
+        <p>I focus on building small-scale projects and websites using HTML and CSS, with an emphasis on frontend web development.</p>
+      </div>
+      <div class="card">
+        <h2>Hacking</h2>
+        <p>I’ve explored ethical hacking by identifying system vulnerabilities and learning how to secure networks against common cyber threats.</p>
+      </div>
+      <div class ="card">
+        <h2>Kali linux</h2>
+        <p>I have used Kali Linux for ethical hacking and cybersecurity learning, working with tools like Nmap, Wireshark, and Metasploit to analyze and secure networks</p>
+      </div>
+      <div class="card">
+        <h2>Programming</h2>
+        <p>I’m skilled in C, with strong problem-solving and efficient code writing abilities, and have some experience working with Python and JavaScript for scripting and web-related tasks. This gives me both low-level control and high-level flexibility.
         </p>
       </div>
-    </section>
-
-    <!-- Right: 65% Photos -->
-    <section class="people-grid" aria-label="Team Portfolios">
-      <!-- Person 1 -->
-      <div class="person">
-    <a href="https://manohar-rks.github.io/portfolio-website/" class="avatar" target="_blank" rel="noopener">
-    <img src="img.png" alt="Person 1 portrait" />
-    </a>
-    <a href="https://manohar-rks.github.io/portfolio-website/" target="_blank" rel="noopener" class="name">Manohar.R.K.S</a>
+      <div class="card">
+        <h2>Networking</h2>
+        <p>I have hands-on experience with computer networking, including configuring routers, switches, and basic firewall rules. I’ve also worked with IP addressing, subnetting, and setting up LAN/WAN connections.</p>
+      </div>
+      <div class="card">
+        <h2>Penetration Testing</h2>
+        <p>I have performed penetration testing on systems and web applications to identify security vulnerabilities. Using tools like Nmap, Burp Suite, and Metasploit, I simulated real-world attacks and provided recommendations to strengthen defenses.</p>
+      </div>
+      <div class="card">
+        <h2>Exploitation FrameWork</h2>
+        <p>I have worked with the Metasploit Framework to perform penetration testing and exploit known vulnerabilities in controlled environments. I utilized its modules for reconnaissance, payload delivery, and post-exploitation tasks, gaining hands-on experience in simulating real-world attacks and improving system defenses.</p>
+      </div>
+      <div class="card">
+        <h2>Vulnerability Assessment</h2>
+        <p>I have conducted vulnerability assessments on systems and web applications to identify potential security risks. Using tools like Nmap, Nessus, and OpenVAS, I scanned for misconfigurations, outdated software, and exploitable weaknesses. I analyzed the results to prioritize threats and provided actionable recommendations to strengthen the security posture.</p>
+      </div>
     </div>
-
-
-      <!-- Person 2 -->
-      <div class="person">
-        <a href="https://example.com/portfolio/person2" class="avatar" target="_blank" rel="noopener">
-          <img src="img.png" alt="Person 2 portrait" />
-        </a>
-        <a href="https://example.com/portfolio/person2" target="_blank" rel="noopener" class="name">D.S.Vardhan</a>
-      </div>
-
-      <!-- Person 3 -->
-      <div class="person">
-        <a href="https://example.com/portfolio/person3" class="avatar" target="_blank" rel="noopener">
-          <img src="pro.png" alt="Person 3 portrait" />
-        </a>
-        <a href="https://example.com/portfolio/person3" target="_blank" rel="noopener" class="name">G.Dasaradhram</a>
-      </div>
-
-      <!-- Person 4 -->
-      <div class="person">
-        <a href="https://example.com/portfolio/person4" class="avatar" target="_blank" rel="noopener">
-          <img src="pro.png" alt="Person 4 portrait" />
-        </a>
-        <a href="https://example.com/portfolio/person4" target="_blank" rel="noopener" class="name">G.Mahi Kalyani</a>
-      </div>
-
-      <!-- Person 5 -->
-      <div class="person">
-        <a href="https://example.com/portfolio/person5" class="avatar" target="_blank" rel="noopener">
-          <img src="pro.png" alt="Person 5 portrait" />
-        </a>
-        <a href="https://example.com/portfolio/person5" target="_blank" rel="noopener" class="name">R.Aneesha</a>
-      </div>
     </section>
-  </main>
+    <section id="education" style="padding: 50px 20px; background-color: black; font-family: Arial, sans-serif; min-height: 100vh;">
+  <h2 style="font-size:35px; text-align: center; color:white;">Education</h2>
+  <div style="max-width: 900px; margin: auto;">
+    <div style="background: #0070B8; padding: 20px; border-radius: 10px; margin-bottom: 20px; box-shadow: 0px 4px 8px rgba(0,0,0,0.1);">
+      <h3 style="margin: 0; color: gold;">Bachelor of Technology in Computer Science</h3>
+      <p style="margin: 5px 0; font-weight: bold;">Ideal Institute of Technology</p>
+      <p style="margin: 5px 0;">2024 – 2028</p>
+      <p style="margin: 0; color: white;">Key courses: Cybersecurity, Networking, Programming in C/Python, Web Development</p>
+    </div>
+  </div>
 
-  <footer></footer>
+  <h2 style="text-align:center; color: #FFD700">Achievements</h2>
+  <div style="max-width: 900px; margin: auto;">
+    <div style="background: #0070B8; padding: 26px; border-radius: 10px; margin-bottom: 20px; box-shadow: 0px 4px 8px rgba(0,0,0,0.1);">
+      <p>
+        <a href="EH_certificate.pdf" target="_blank" style="color: rgba(255, 217, 0, 0.904);"><h3>Ethical Hacking Certificate</h3></a>
+      </p>
+      <p>
+        <a href="PY_essentials _1.pdf" target="_blank" style="color: rgba(255, 217, 0, 0.904);"><h3>Py essentials 1</h3></a>
+      </p>
+      <p>
+        <a href="ethical-hacker.png" target="_blank" style="color: rgba(255, 217, 0, 0.904)"><h3>EH badge</h3></a>
+      </p>
+      <p>
+        <a href="python-essentials-1.1 (1).png" target="_blank" style="color: rgba(255, 217, 0, 0.904)"><h3>PY badge</h3></a>
+      </p>
+    </div>
+  </div>
+
+  <h2 style="text-align:center; color: #b0b0b0c2;">Description</h2>
+  <div style="max-width: 900px; margin: auto;">
+    <div style="background: #0070B8; padding: 26px; border-radius: 10px; margin-bottom: 20px; box-shadow: 0px 4px 8px rgba(0,0,0,0.1);">
+      <p style="font-size: 15px;">
+        I am currently pursuing a B.Tech in Computer Science,
+        with a strong focus on cybersecurity, networking, and ethical hacking.
+        My studies involve both theoretical concepts and practical applications.
+        I work extensively with network configuration, vulnerability assessment, and secure coding practices.
+        Alongside my coursework, I actively engage in hands-on labs to strengthen my technical expertise.
+        I regularly explore security tools such as Kali Linux, Nmap, and Burp Suite.
+        I also participate in real-world penetration testing challenges to simulate cyber attack scenarios.
+      </p>
+    </div>
+  </div>
+</section>
+<section id="projects">
+  <h2 style="font-size:35px; color:white; text-align:center;">Projects</h2>
+  <!-- Row 1 -->
+  <div style="max-width: 900px; margin: auto; display: flex; gap: 20px; flex-wrap: nowrap;">
+    <!-- Portfolio Website (60%) -->
+    <div class="card" style="background: #0070B8; padding: 26px; border-radius: 10px;
+                             box-shadow: 0px 4px 8px rgba(0,0,0,0.1); flex: 0 0 60%;">
+      <h2 style="color: #FF9800;">Personal Portfolio Website</h2>
+      <p>My portfolio website showcases my skills, projects, and learning journey in technology. 
+         It highlights mini projects I’ve built in web development, Python, and C/C++ to demonstrate 
+         problem-solving and creativity.</p>
+    </div> 
+    <!-- Password Generator (40%) -->
+    <div class="card" style="background: #0070B8; padding: 26px; border-radius: 10px;
+                             box-shadow: 0px 4px 8px rgba(0,0,0,0.1); flex: 0 0 40%;">
+      <h2 style="color: #FF9800;">Password Generator</h2>
+      <p>I created a Python-based password generator that builds strong and secure passwords using random characters. 
+         It allows customization with letters, numbers, and special symbols for better security.</p>
+    </div> 
+  </div>
+  <!-- Row 2 -->
+  <div style="max-width: 900px; margin: 24px auto 0; display: flex; gap: 20px; flex-wrap: nowrap;">
+    <!-- Calculator (40%) -->
+    <div class="card" style="background: #0070B8; padding: 26px; border-radius: 10px;
+                             box-shadow: 0px 4px 8px rgba(0,0,0,0.1); flex: 0 0 40%;">
+      <h2 style="color:#FF9800;">Calculator</h2>
+      <p>I developed a calculator application in Python with GUI support.
+It provides basic arithmetic operations through a simple and interactive interface.
+The project helped me strengthen my Python programming and GUI development skills.</p>
+    </div>
+    <!-- Wi-Fi Hacks (60%) -->
+    <div class="card" style="background: #0070B8; padding: 26px; border-radius: 10px;
+                             box-shadow: 0px 4px 8px rgba(0,0,0,0.1); flex: 0 0 60%;">
+      <h2 style="color:#FF9800;">Wi-Fi Hacks</h2>
+      <p>This project demonstrates Wi-Fi security testing using Kali Linux tools. 
+         I captured and analyzed my own network traffic to simulate how attackers attempt to crack Wi-Fi passwords. 
+         The work highlights the importance of strong encryption and secure configurations in protecting wireless networks.</p>
+    </div>
+  </div>
+  <!--Row 3-->
+  <div style="max-width:900px; margin: 24px auto 0; display: flex; gap:20px; flex-wrap: nowrap;">
+  <!--fake access point-->
+  <div class="card" style="background: #0070B8; padding: 26px; border-radius: 10px;
+                             box-shadow: 0px 4px 8px rgba(0,0,0,0.1); flex: 0 0 60%">
+  <h2  style="color:#FF9800;">Fake access point</h2>  
+  <p>I created a demo of an Evil Twin Attack by setting up a fake Wi-Fi hotspot in a controlled lab environment. 
+    The project shows how attackers can trick users into connecting to malicious networks.
+     I also explained the possible defenses to raise awareness about securing wireless connections.</p>                        
+  </div>                        
+  </div>
+                            
+</section>
+<section id="contact" >
+  <h2 style="font-size:35px; color:white;">Contact</h2>
+  <p style="font-size: 22px; color:#27d308ab;">You can reach me at:</p>
+  <p style="font-size:18px; color:white; font-weight: bold;">
+    Email: <a href="mailto:manohar.r.k.s.139@gmail.com" style="color:#00BFFF; text-decoration: none;">manohar.r.k.s.139@gmail.com</a>
+  </p>
+  <p style="font-size: 18px; color:white; font-weight: bold;">Contact No.: +91 93055 7599</p>
+  <p style="font-size: 20px; color: rgba(167, 163, 163, 0.637)">You can access my resume by clicking the link below:</p>
+  <a href="Manohar_Resume_Final.pdf" style="color:#0b95c4c9; font-size: 20px;">Manohar_Resume_Final</a>
+</section>
+
+ <script>
+  const navLinks = document.querySelectorAll("nav a");
+  navLinks.forEach(link => {
+    link.addEventListener("click", function() {
+      navLinks.forEach(l => l.classList.remove("active"));
+      this.classList.add("active");
+    });
+  });
+</script>
+<footer>
+  <p style="text-align: center">2025. all rights reserved</p>
+</footer>
 </body>
 </html>
