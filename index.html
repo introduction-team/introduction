@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Introduction Page</title>
+  <style>
+    :root {
+      --brand-blue: #0070B8;
+      --bg-black: #000000;
+      --text-white: #ffffff;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+      background: var(--bg-black);
+      color: var(--text-white);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* Header */
+    header {
+      width: 100%;
+      padding: 14px 22px;
+      background: rgba(0, 0, 0, 0.12);
+      backdrop-filter: blur(6px);
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .brand {
+      font-weight: 700;
+      letter-spacing: 0.4px;
+      opacity: 0.9;
+      color: var(--text-white);
+    }
+
+    /* Layout */
+    .wrapper {
+      flex: 1;
+      display: grid;
+      grid-template-columns: 35% 65%; /* 35% for matter, 65% for photos */
+      gap: 24px;
+      max-width: 1200px;
+      width: 100%;
+      margin: 28px auto;
+      padding: 0 22px 40px;
+    }
+
+    /* Left (Matter) */
+    .intro {
+      display: grid;
+      place-items: center; /* centers content both horizontally and vertically */
+      text-align: center; /* aligns text in center as requested */
+    }
+
+    .intro h1 {
+      margin: 0 0 12px 0;
+      font-size: clamp(28px, 4vw, 42px);
+      line-height: 1.15;
+      color: var(--text-white);
+    }
+
+    .intro p {
+      margin: 0 auto;
+      max-width: 36ch;
+      font-size: clamp(15px, 1.8vw, 18px);
+      opacity: 0.95;
+      color: var(--text-white); /* left side matter in white */
+    }
+
+    /* Right (Photos) */
+    .people-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+      align-content: center;
+      justify-items: center;
+      padding: 12px 0;
+    }
+
+    @media (max-width: 920px) {
+      .people-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+
+    @media (max-width: 680px) {
+      .wrapper {
+        grid-template-columns: 1fr; /* stack on small screens */
+      }
+      .people-grid { grid-template-columns: repeat(3, 1fr); }
+    }
+
+    .person {
+      display: grid;
+      justify-items: center;
+      gap: 8px;
+      text-align: center;
+    }
+
+    .person a {
+      text-decoration: none;
+    }
+
+    .avatar {
+      width: 140px;
+      height: 140px;
+      border-radius: 50%;
+      overflow: hidden;
+      border: 4px solid rgba(255, 255, 255, 0.55);
+      transition: box-shadow 0.2s ease, transform 0.2s ease;
+      display: grid;
+      place-items: center;
+      background: rgba(255,255,255,0.1);
+    }
+
+    .avatar img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    /* Hover highlight: shadow on pointer */
+    .avatar:hover {
+      box-shadow: 0 16px 34px rgba(0, 0, 0, 0.65), 0 0 0 6px rgba(0, 112, 184, 0.55);
+      transform: translateY(-3px);
+    }
+
+    .name {
+      font-weight: 700;
+      color: var(--brand-blue); /* person names in blue */
+      letter-spacing: 0.2px;
+    }
+
+    /* Footer (optional minimal spacing) */
+    footer { height: 10px; }
+  </style>
+</head>
+<body>
+  <main class="wrapper" id="home">
+    <!-- Left: 35% Matter -->
+    <section class="intro">
+      <div>
+        <h1>Personal Portfolio-websites</h1>
+        <p>
+          This project was developed by a team of five students from CSE-A. Each member actively contributed to the design, development, and implementation of the work. The project highlights our teamwork, learning, and application of knowledge gained during our course.
+        </p>
+      </div>
+    </section>
+
+    <!-- Right: 65% Photos -->
+    <section class="people-grid" aria-label="Team Portfolios">
+      <!-- Person 1 -->
+      <div class="person">
+    <a href="https://manohar-rks.github.io/portfolio-website/" class="avatar" target="_blank" rel="noopener">
+    <img src="img.png" alt="Person 1 portrait" />
+    </a>
+    <a href="https://manohar-rks.github.io/portfolio-website/" target="_blank" rel="noopener" class="name">Manohar.R.K.S</a>
+    </div>
+
+
+      <!-- Person 2 -->
+      <div class="person">
+        <a href="https://example.com/portfolio/person2" class="avatar" target="_blank" rel="noopener">
+          <img src="img.png" alt="Person 2 portrait" />
+        </a>
+        <a href="https://example.com/portfolio/person2" target="_blank" rel="noopener" class="name">D.S.Vardhan</a>
+      </div>
+
+      <!-- Person 3 -->
+      <div class="person">
+        <a href="https://example.com/portfolio/person3" class="avatar" target="_blank" rel="noopener">
+          <img src="pro.png" alt="Person 3 portrait" />
+        </a>
+        <a href="https://example.com/portfolio/person3" target="_blank" rel="noopener" class="name">G.Dasaradhram</a>
+      </div>
+
+      <!-- Person 4 -->
+      <div class="person">
+        <a href="https://example.com/portfolio/person4" class="avatar" target="_blank" rel="noopener">
+          <img src="pro.png" alt="Person 4 portrait" />
+        </a>
+        <a href="https://example.com/portfolio/person4" target="_blank" rel="noopener" class="name">G.Mahi Kalyani</a>
+      </div>
+
+      <!-- Person 5 -->
+      <div class="person">
+        <a href="https://example.com/portfolio/person5" class="avatar" target="_blank" rel="noopener">
+          <img src="pro.png" alt="Person 5 portrait" />
+        </a>
+        <a href="https://example.com/portfolio/person5" target="_blank" rel="noopener" class="name">R.Aneesha</a>
+      </div>
+    </section>
+  </main>
+
+  <footer></footer>
+</body>
+</html>
